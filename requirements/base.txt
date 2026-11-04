@@ -1,0 +1,17 @@
+# GeoSentinel — pinned production dependencies (Phase 1 foundation)
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+pydantic==2.10.3
+pydantic-settings==2.6.1
+sqlalchemy==2.0.36
+asyncpg==0.30.0
+psycopg2-binary==2.9.10
+geoalchemy2==0.15.2
+python-multipart==0.0.17
+httpx==0.28.1
+structlog==24.4.0
+python-json-logger==3.2.1
+Pillow==11.0.0
+websockets>=12.0
+gtfs-realtime-bindings>=1.0.0
+protobuf>=4.25.0

@@ -1,0 +1,1 @@
+Detect temporal anomalies from orbit before ground reports break. Meet GeoSentinel — Sentinel-1 SAR + Sentinel-2 optical imagery fused with FIRMS, ACLED, and GDELT for explainable situational awareness.

@@ -1,0 +1,180 @@
+{
+  "version": "1",
+  "description": "Curated Sentinel GeoTIFF assets for GeoSentinel",
+  "assets": [
+    {
+      "id": "s2-levant-w1-b04",
+      "platform": "sentinel-2",
+      "collection": "sentinel-2-l2a",
+      "aoi_id": "aoi-levant",
+      "datetime": "2026-09-27T15:33:24Z",
+      "filename": "B04_w1.tif",
+      "bands": [
+        "B04"
+      ],
+      "source": {
+        "type": "local",
+        "path": "raw/curated/sentinel-2-l2a/aoi-levant/B04_w1.tif"
+      },
+      "checksum_sha256": "2752dedc789e016cabc14d162c996b00fd8e03d0d28f923a508227f7658e2899",
+      "properties": {
+        "eo:cloud_cover": 5
+      }
+    },
+    {
+      "id": "s2-levant-w1-b08",
+      "platform": "sentinel-2",
+      "collection": "sentinel-2-l2a",
+      "aoi_id": "aoi-levant",
+      "datetime": "2026-09-27T15:33:24Z",
+      "filename": "B08_w1.tif",
+      "bands": [
+        "B08"
+      ],
+      "source": {
+        "type": "local",
+        "path": "raw/curated/sentinel-2-l2a/aoi-levant/B08_w1.tif"
+      },
+      "checksum_sha256": "82fe45224ef613127827ae540ed60308c13718ba3161bcda2c53fdf508b31d60",
+      "properties": {
+        "eo:cloud_cover": 5
+      }
+    },
+    {
+      "id": "s2-levant-w2-b04",
+      "platform": "sentinel-2",
+      "collection": "sentinel-2-l2a",
+      "aoi_id": "aoi-levant",
+      "datetime": "2026-10-04T15:33:24Z",
+      "filename": "B04_w2.tif",
+      "bands": [
+        "B04"
+      ],
+      "source": {
+        "type": "local",
+        "path": "raw/curated/sentinel-2-l2a/aoi-levant/B04_w2.tif"
+      },
+      "checksum_sha256": "d52c32ec97416097c482afc8efd29f57439374ba721ea27728cd1617a82f186f",
+      "properties": {
+        "eo:cloud_cover": 8
+      }
+    },
+    {
+      "id": "s2-levant-w2-b08",
+      "platform": "sentinel-2",
+      "collection": "sentinel-2-l2a",
+      "aoi_id": "aoi-levant",
+      "datetime": "2026-10-04T15:33:24Z",
+      "filename": "B08_w2.tif",
+      "bands": [
+        "B08"
+      ],
+      "source": {
+        "type": "local",
+        "path": "raw/curated/sentinel-2-l2a/aoi-levant/B08_w2.tif"
+      },
+      "checksum_sha256": "006e7d0c75c490dfc235603873cdcfcc1df59055187c6f96bfbd3347b32a1d7b",
+      "properties": {
+        "eo:cloud_cover": 8
+      }
+    },
+    {
+      "id": "s2-delta-w1-b04",
+      "platform": "sentinel-2",
+      "collection": "sentinel-2-l2a",
+      "aoi_id": "aoi-delta",
+      "datetime": "2026-09-30T15:33:24Z",
+      "filename": "B04_w1.tif",
+      "bands": [
+        "B04"
+      ],
+      "source": {
+        "type": "local",
+        "path": "raw/curated/sentinel-2-l2a/aoi-delta/B04_w1.tif"
+      },
+      "checksum_sha256": "83888cce2a5179ea6578d5421a242f1b65e8b7696402dbf21cd5c9f267072717",
+      "properties": {
+        "eo:cloud_cover": 3
+      }
+    },
+    {
+      "id": "s2-delta-w1-b08",
+      "platform": "sentinel-2",
+      "collection": "sentinel-2-l2a",
+      "aoi_id": "aoi-delta",
+      "datetime": "2026-09-30T15:33:24Z",
+      "filename": "B08_w1.tif",
+      "bands": [
+        "B08"
+      ],
+      "source": {
+        "type": "local",
+        "path": "raw/curated/sentinel-2-l2a/aoi-delta/B08_w1.tif"
+      },
+      "checksum_sha256": "59a6bd45605a958d527e5c8e12b5d528b869ff04dd2a7b3bb0dfa3b3bf0495ef",
+      "properties": {
+        "eo:cloud_cover": 3
+      }
+    },
+    {
+      "id": "s1-levant-w1-vv",
+      "platform": "sentinel-1",
+      "collection": "sentinel-1-grd",
+      "aoi_id": "aoi-levant",
+      "datetime": "2026-09-28T15:33:24Z",
+      "filename": "VV_w1.tif",
+      "bands": [
+        "VV"
+      ],
+      "source": {
+        "type": "local",
+        "path": "raw/curated/sentinel-1-grd/aoi-levant/VV_w1.tif"
+      },
+      "checksum_sha256": "00f635f75c50f0e85513d719d28237bb7ae89e10df643fc033232b48aea0c422",
+      "properties": {
+        "sar:instrument_mode": "IW"
+      },
+      "polarization": "VV"
+    },
+    {
+      "id": "s1-levant-w2-vv",
+      "platform": "sentinel-1",
+      "collection": "sentinel-1-grd",
+      "aoi_id": "aoi-levant",
+      "datetime": "2026-10-05T15:33:24Z",
+      "filename": "VV_w2.tif",
+      "bands": [
+        "VV"
+      ],
+      "source": {
+        "type": "local",
+        "path": "raw/curated/sentinel-1-grd/aoi-levant/VV_w2.tif"
+      },
+      "checksum_sha256": "34467dfaed97082d71c612b9f38b90c3586e5c7a09e772bd088c30d35b6c12d6",
+      "properties": {
+        "sar:instrument_mode": "IW"
+      },
+      "polarization": "VV"
+    },
+    {
+      "id": "s1-delta-w1-vv",
+      "platform": "sentinel-1",
+      "collection": "sentinel-1-grd",
+      "aoi_id": "aoi-delta",
+      "datetime": "2026-10-01T15:33:24Z",
+      "filename": "VV_w1.tif",
+      "bands": [
+        "VV"
+      ],
+      "source": {
+        "type": "local",
+        "path": "raw/curated/sentinel-1-grd/aoi-delta/VV_w1.tif"
+      },
+      "checksum_sha256": "79625be94ecf46191b95bca2faec2af75b187328f678245a5fd70f2386dfcade",
+      "properties": {
+        "sar:instrument_mode": "IW"
+      },
+      "polarization": "VV"
+    }
+  ]
+}

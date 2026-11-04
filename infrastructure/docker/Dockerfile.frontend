@@ -1,0 +1,35 @@
+# GeoSentinel frontend — production build + nginx (Phase 8)
+FROM node:20-alpine AS build
+
+WORKDIR /app/frontend
+
+COPY frontend/package.json frontend/package-lock.json ./
+RUN npm ci
+
+COPY frontend .
+COPY .env* /app/
+
+ARG VITE_API_BASE_URL=/api/v1
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
+
+RUN npm run build
+
+FROM nginx:1.27-alpine
+
+RUN addgroup -g 1000 geosentinel && adduser -u 1000 -G geosentinel -D geosentinel
+
+COPY infrastructure/docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/frontend/dist /usr/share/nginx/html
+
+RUN chown -R geosentinel:geosentinel /usr/share/nginx/html /var/cache/nginx /var/log/nginx \
+    && touch /var/run/nginx.pid \
+    && chown geosentinel:geosentinel /var/run/nginx.pid
+
+USER geosentinel
+
+EXPOSE 8080
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD wget -q -O /dev/null http://127.0.0.1:8080/ || exit 1
+
+CMD ["nginx", "-g", "daemon off;"]

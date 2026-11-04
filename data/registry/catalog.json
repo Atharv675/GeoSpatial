@@ -1,0 +1,607 @@
+{
+  "type": "Catalog",
+  "id": "geosentinel-catalog",
+  "stac_version": "1.0.0",
+  "description": "GeoSentinel curated imagery registry \u2014 designed for future STAC migration",
+  "scope": {
+    "max_aois": 3,
+    "time_range_days": 30,
+    "tile_size": 512,
+    "update_frequency": "weekly"
+  },
+  "collections": [
+    {
+      "type": "Collection",
+      "id": "sentinel-2-l2a",
+      "title": "Sentinel-2 L2A (curated)",
+      "description": "Optical imagery for NDVI, NDWI, NBR analysis"
+    },
+    {
+      "type": "Collection",
+      "id": "sentinel-1-grd",
+      "title": "Sentinel-1 GRD (curated)",
+      "description": "SAR imagery for temporal differencing"
+    }
+  ],
+  "items": [
+    {
+      "type": "Item",
+      "stac_version": "1.0.0",
+      "id": "s2-levant-w1-b04",
+      "collection": "sentinel-2-l2a",
+      "properties": {
+        "datetime": "2026-05-01T18:06:48Z",
+        "platform": "sentinel-2",
+        "gs:collection": "sentinel-2-l2a",
+        "gs:aoi_id": "aoi-levant",
+        "gs:curated": true,
+        "gs:ingested_at": "2026-05-22T18:06:50.531121Z",
+        "file:size_bytes": 927790,
+        "file:modified": "2026-05-22T18:06:48.973872+00:00",
+        "file:name": "B04_w1.tif",
+        "eo:cloud_cover": 5,
+        "gs:bands": [
+          "B04"
+        ],
+        "gs:product_type": "L2A"
+      },
+      "assets": {
+        "data": {
+          "href": "raw/sentinel-2-l2a/aoi-levant/20260501/B04_w1.tif",
+          "type": "image/tiff",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.75,
+              31.2
+            ],
+            [
+              34.85,
+              31.2
+            ],
+            [
+              34.85,
+              31.3
+            ],
+            [
+              34.75,
+              31.3
+            ],
+            [
+              34.75,
+              31.2
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        34.75,
+        31.2,
+        34.85,
+        31.3
+      ]
+    },
+    {
+      "type": "Item",
+      "stac_version": "1.0.0",
+      "id": "s2-levant-w1-b08",
+      "collection": "sentinel-2-l2a",
+      "properties": {
+        "datetime": "2026-05-01T18:06:48Z",
+        "platform": "sentinel-2",
+        "gs:collection": "sentinel-2-l2a",
+        "gs:aoi_id": "aoi-levant",
+        "gs:curated": true,
+        "gs:ingested_at": "2026-05-22T18:06:50.575180Z",
+        "file:size_bytes": 927915,
+        "file:modified": "2026-05-22T18:06:49.048750+00:00",
+        "file:name": "B08_w1.tif",
+        "eo:cloud_cover": 5,
+        "gs:bands": [
+          "B08"
+        ],
+        "gs:product_type": "L2A"
+      },
+      "assets": {
+        "data": {
+          "href": "raw/sentinel-2-l2a/aoi-levant/20260501/B08_w1.tif",
+          "type": "image/tiff",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.75,
+              31.2
+            ],
+            [
+              34.85,
+              31.2
+            ],
+            [
+              34.85,
+              31.3
+            ],
+            [
+              34.75,
+              31.3
+            ],
+            [
+              34.75,
+              31.2
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        34.75,
+        31.2,
+        34.85,
+        31.3
+      ]
+    },
+    {
+      "type": "Item",
+      "stac_version": "1.0.0",
+      "id": "s2-levant-w2-b04",
+      "collection": "sentinel-2-l2a",
+      "properties": {
+        "datetime": "2026-05-08T18:06:48Z",
+        "platform": "sentinel-2",
+        "gs:collection": "sentinel-2-l2a",
+        "gs:aoi_id": "aoi-levant",
+        "gs:curated": true,
+        "gs:ingested_at": "2026-05-22T18:06:50.664345Z",
+        "file:size_bytes": 927839,
+        "file:modified": "2026-05-22T18:06:49.126656+00:00",
+        "file:name": "B04_w2.tif",
+        "eo:cloud_cover": 8,
+        "gs:bands": [
+          "B04"
+        ],
+        "gs:product_type": "L2A"
+      },
+      "assets": {
+        "data": {
+          "href": "raw/sentinel-2-l2a/aoi-levant/20260508/B04_w2.tif",
+          "type": "image/tiff",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.75,
+              31.2
+            ],
+            [
+              34.85,
+              31.2
+            ],
+            [
+              34.85,
+              31.3
+            ],
+            [
+              34.75,
+              31.3
+            ],
+            [
+              34.75,
+              31.2
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        34.75,
+        31.2,
+        34.85,
+        31.3
+      ]
+    },
+    {
+      "type": "Item",
+      "stac_version": "1.0.0",
+      "id": "s2-levant-w2-b08",
+      "collection": "sentinel-2-l2a",
+      "properties": {
+        "datetime": "2026-05-08T18:06:48Z",
+        "platform": "sentinel-2",
+        "gs:collection": "sentinel-2-l2a",
+        "gs:aoi_id": "aoi-levant",
+        "gs:curated": true,
+        "gs:ingested_at": "2026-05-22T18:06:50.748008Z",
+        "file:size_bytes": 928007,
+        "file:modified": "2026-05-22T18:06:49.204976+00:00",
+        "file:name": "B08_w2.tif",
+        "eo:cloud_cover": 8,
+        "gs:bands": [
+          "B08"
+        ],
+        "gs:product_type": "L2A"
+      },
+      "assets": {
+        "data": {
+          "href": "raw/sentinel-2-l2a/aoi-levant/20260508/B08_w2.tif",
+          "type": "image/tiff",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.75,
+              31.2
+            ],
+            [
+              34.85,
+              31.2
+            ],
+            [
+              34.85,
+              31.3
+            ],
+            [
+              34.75,
+              31.3
+            ],
+            [
+              34.75,
+              31.2
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        34.75,
+        31.2,
+        34.85,
+        31.3
+      ]
+    },
+    {
+      "type": "Item",
+      "stac_version": "1.0.0",
+      "id": "s2-delta-w1-b04",
+      "collection": "sentinel-2-l2a",
+      "properties": {
+        "datetime": "2026-05-04T18:06:48Z",
+        "platform": "sentinel-2",
+        "gs:collection": "sentinel-2-l2a",
+        "gs:aoi_id": "aoi-delta",
+        "gs:curated": true,
+        "gs:ingested_at": "2026-05-22T18:06:50.844493Z",
+        "file:size_bytes": 928104,
+        "file:modified": "2026-05-22T18:06:49.283966+00:00",
+        "file:name": "B04_w1.tif",
+        "eo:cloud_cover": 3,
+        "gs:bands": [
+          "B04"
+        ],
+        "gs:product_type": "L2A"
+      },
+      "assets": {
+        "data": {
+          "href": "raw/sentinel-2-l2a/aoi-delta/20260504/B04_w1.tif",
+          "type": "image/tiff",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.1,
+              30.0
+            ],
+            [
+              31.25,
+              30.0
+            ],
+            [
+              31.25,
+              30.12
+            ],
+            [
+              31.1,
+              30.12
+            ],
+            [
+              31.1,
+              30.0
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        31.1,
+        30.0,
+        31.25,
+        30.12
+      ]
+    },
+    {
+      "type": "Item",
+      "stac_version": "1.0.0",
+      "id": "s2-delta-w1-b08",
+      "collection": "sentinel-2-l2a",
+      "properties": {
+        "datetime": "2026-05-04T18:06:48Z",
+        "platform": "sentinel-2",
+        "gs:collection": "sentinel-2-l2a",
+        "gs:aoi_id": "aoi-delta",
+        "gs:curated": true,
+        "gs:ingested_at": "2026-05-22T18:06:50.969978Z",
+        "file:size_bytes": 928004,
+        "file:modified": "2026-05-22T18:06:49.355633+00:00",
+        "file:name": "B08_w1.tif",
+        "eo:cloud_cover": 3,
+        "gs:bands": [
+          "B08"
+        ],
+        "gs:product_type": "L2A"
+      },
+      "assets": {
+        "data": {
+          "href": "raw/sentinel-2-l2a/aoi-delta/20260504/B08_w1.tif",
+          "type": "image/tiff",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.1,
+              30.0
+            ],
+            [
+              31.25,
+              30.0
+            ],
+            [
+              31.25,
+              30.12
+            ],
+            [
+              31.1,
+              30.12
+            ],
+            [
+              31.1,
+              30.0
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        31.1,
+        30.0,
+        31.25,
+        30.12
+      ]
+    },
+    {
+      "type": "Item",
+      "stac_version": "1.0.0",
+      "id": "s1-levant-w1-vv",
+      "collection": "sentinel-1-grd",
+      "properties": {
+        "datetime": "2026-05-02T18:06:48Z",
+        "platform": "sentinel-1",
+        "gs:collection": "sentinel-1-grd",
+        "gs:aoi_id": "aoi-levant",
+        "gs:curated": true,
+        "gs:ingested_at": "2026-05-22T18:06:51.078234Z",
+        "file:size_bytes": 927885,
+        "file:modified": "2026-05-22T18:06:49.429297+00:00",
+        "file:name": "VV_w1.tif",
+        "sar:instrument_mode": "IW",
+        "gs:bands": [
+          "VV"
+        ],
+        "sar:polarization": "VV",
+        "gs:product_type": "GRD"
+      },
+      "assets": {
+        "data": {
+          "href": "raw/sentinel-1-grd/aoi-levant/20260502/VV_w1.tif",
+          "type": "image/tiff",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.75,
+              31.2
+            ],
+            [
+              34.85,
+              31.2
+            ],
+            [
+              34.85,
+              31.3
+            ],
+            [
+              34.75,
+              31.3
+            ],
+            [
+              34.75,
+              31.2
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        34.75,
+        31.2,
+        34.85,
+        31.3
+      ]
+    },
+    {
+      "type": "Item",
+      "stac_version": "1.0.0",
+      "id": "s1-levant-w2-vv",
+      "collection": "sentinel-1-grd",
+      "properties": {
+        "datetime": "2026-05-09T18:06:48Z",
+        "platform": "sentinel-1",
+        "gs:collection": "sentinel-1-grd",
+        "gs:aoi_id": "aoi-levant",
+        "gs:curated": true,
+        "gs:ingested_at": "2026-05-22T18:06:51.166253Z",
+        "file:size_bytes": 928014,
+        "file:modified": "2026-05-22T18:06:49.501583+00:00",
+        "file:name": "VV_w2.tif",
+        "sar:instrument_mode": "IW",
+        "gs:bands": [
+          "VV"
+        ],
+        "sar:polarization": "VV",
+        "gs:product_type": "GRD"
+      },
+      "assets": {
+        "data": {
+          "href": "raw/sentinel-1-grd/aoi-levant/20260509/VV_w2.tif",
+          "type": "image/tiff",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.75,
+              31.2
+            ],
+            [
+              34.85,
+              31.2
+            ],
+            [
+              34.85,
+              31.3
+            ],
+            [
+              34.75,
+              31.3
+            ],
+            [
+              34.75,
+              31.2
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        34.75,
+        31.2,
+        34.85,
+        31.3
+      ]
+    },
+    {
+      "type": "Item",
+      "stac_version": "1.0.0",
+      "id": "s1-delta-w1-vv",
+      "collection": "sentinel-1-grd",
+      "properties": {
+        "datetime": "2026-05-05T18:06:48Z",
+        "platform": "sentinel-1",
+        "gs:collection": "sentinel-1-grd",
+        "gs:aoi_id": "aoi-delta",
+        "gs:curated": true,
+        "gs:ingested_at": "2026-05-22T18:06:51.232502Z",
+        "file:size_bytes": 927828,
+        "file:modified": "2026-05-22T18:06:49.585663+00:00",
+        "file:name": "VV_w1.tif",
+        "sar:instrument_mode": "IW",
+        "gs:bands": [
+          "VV"
+        ],
+        "sar:polarization": "VV",
+        "gs:product_type": "GRD"
+      },
+      "assets": {
+        "data": {
+          "href": "raw/sentinel-1-grd/aoi-delta/20260505/VV_w1.tif",
+          "type": "image/tiff",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.1,
+              30.0
+            ],
+            [
+              31.25,
+              30.0
+            ],
+            [
+              31.25,
+              30.12
+            ],
+            [
+              31.1,
+              30.12
+            ],
+            [
+              31.1,
+              30.0
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        31.1,
+        30.0,
+        31.25,
+        30.12
+      ]
+    }
+  ]
+}

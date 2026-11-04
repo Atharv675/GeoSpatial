@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>GeoSentinel — Launch Brag</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0f1419;
+        color: #e7ecf3;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 30%, #162234 0%, #0f1419 75%, #080b0e 100%);
+      }
+
+      .hud-grid {
+        position: absolute;
+        inset: 0;
+        background-image: 
+          linear-gradient(rgba(42, 53, 72, 0.25) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(42, 53, 72, 0.25) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .top-telemetry {
+        position: absolute;
+        top: 36px;
+        left: 64px;
+        right: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        letter-spacing: 0.15em;
+        color: #8b9cb3;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(42, 53, 72, 0.6);
+        padding-bottom: 16px;
+        z-index: 20;
+      }
+
+      .top-telemetry .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .brand-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #3d8bfd;
+        box-shadow: 0 0 12px #3d8bfd;
+      }
+
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        background: rgba(91, 192, 190, 0.12);
+        border: 1px solid #5bc0be;
+        color: #5bc0be;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .clip {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="20"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Audio Soundtrack with unique ID -->
+      <audio
+        id="bgm"
+        src="./assets/music/bgm.mp3"
+        data-start="0"
+        data-duration="20"
+        data-volume="0.8"
+        data-fade-out="1.5"
+      ></audio>
+
+      <!-- Persistent Tactical HUD Grid -->
+      <div class="hud-grid"></div>
+
+      <!-- Persistent Telemetry Header -->
+      <div class="top-telemetry">
+        <div class="brand">
+          <div class="brand-dot"></div>
+          <span>GEOSENTINEL // MISSION DIRECTIVE</span>
+        </div>
+        <div>AOI: LEVANT-MEDITERRANEAN [34.5° N, 36.2° E]</div>
+        <div class="status-pill">DETERMINISTIC PIPELINE READY</div>
+      </div>
+
+      <!-- Mounted Subcompositions -->
+      <div
+        id="scene1-host"
+        class="clip"
+        data-composition-id="scene1"
+        data-composition-src="./compositions/scene1.html"
+        data-start="0"
+        data-duration="3.2"
+        data-track-index="0"
+      ></div>
+
+      <div
+        id="scene2-host"
+        class="clip"
+        data-composition-id="scene2"
+        data-composition-src="./compositions/scene2.html"
+        data-start="3.0"
+        data-duration="4.6"
+        data-track-index="1"
+      ></div>
+
+      <div
+        id="scene3-host"
+        class="clip"
+        data-composition-id="scene3"
+        data-composition-src="./compositions/scene3.html"
+        data-start="7.4"
+        data-duration="6.2"
+        data-track-index="2"
+      ></div>
+
+      <div
+        id="scene4-host"
+        class="clip"
+        data-composition-id="scene4"
+        data-composition-src="./compositions/scene4.html"
+        data-start="13.4"
+        data-duration="4.2"
+        data-track-index="3"
+      ></div>
+
+      <div
+        id="scene5-host"
+        class="clip"
+        data-composition-id="scene5"
+        data-composition-src="./compositions/scene5.html"
+        data-start="17.4"
+        data-duration="2.6"
+        data-track-index="4"
+      ></div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

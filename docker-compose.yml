@@ -1,0 +1,94 @@
+# GeoSentinel — full stack E2E deployment (Phase 8)
+# Usage: docker compose up --build
+# Re-seed pipeline: docker compose run --rm -e FORCE_E2E_BOOTSTRAP=1 bootstrap
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: geosentinel-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-geosentinel}
+      POSTGRES_USER: ${POSTGRES_USER:-geosentinel}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-geosentinel} -d ${POSTGRES_DB:-geosentinel}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  bootstrap:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.backend
+    container_name: geosentinel-bootstrap
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: db
+      DATA_ROOT: /app/data
+      REGISTRY_PATH: /app/data/registry
+      PYTHONPATH: /app
+    volumes:
+      - ./data:/app/data
+    command: ["python", "scripts/e2e_bootstrap.py"]
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  backend:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.backend
+    container_name: geosentinel-backend
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: db
+      DATA_ROOT: /app/data
+      REGISTRY_PATH: /app/data/registry
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      bootstrap:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 25s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.frontend
+      args:
+        VITE_API_BASE_URL: /api/v1
+    container_name: geosentinel-frontend
+    ports:
+      - "5173:8080"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

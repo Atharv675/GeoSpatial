@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Scene 1 — Hook</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { width: 1920px; height: 1080px; overflow: hidden; background: transparent; font-family: 'Inter', sans-serif; color: #e7ecf3; }
+      #root { width: 100%; height: 100%; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .radar-sweep {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        border: 1px dashed rgba(61, 139, 253, 0.35);
+        box-shadow: 0 0 50px rgba(61, 139, 253, 0.12);
+      }
+      .radar-reticle {
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        border: 2px solid #3d8bfd;
+        border-radius: 50%;
+        box-shadow: 0 0 30px rgba(61, 139, 253, 0.5);
+      }
+      .radar-reticle::after {
+        content: '';
+        position: absolute;
+        top: 50%; left: 50%;
+        width: 10px; height: 10px;
+        background: #3d8bfd;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 14px #fff;
+      }
+      .hook-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        letter-spacing: 0.25em;
+        color: #3d8bfd;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 2;
+      }
+      .hook-headline {
+        font-size: 80px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        text-align: center;
+        max-width: 1400px;
+        background: linear-gradient(180deg, #ffffff 30%, #a4b8d1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: 2;
+      }
+      .hook-sub {
+        font-size: 28px;
+        font-weight: 600;
+        color: #8b9cb3;
+        margin-top: 30px;
+        letter-spacing: -0.01em;
+        text-align: center;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="scene1" data-width="1920" data-height="1080">
+      <div id="s1-sweep" class="radar-sweep"></div>
+      <div id="s1-reticle" class="radar-reticle"></div>
+      <div id="s1-tag" class="hook-tag">
+        <span>●</span> ORBITAL SURVEILLANCE &amp; ANOMALY DETECTION
+      </div>
+      <h1 id="s1-head" class="hook-headline">
+        THE PLANET IS CHANGING.<br />
+        WHO'S VERIFYING?
+      </h1>
+      <p id="s1-sub" class="hook-sub">
+        Most geospatial intelligence platforms guess. GeoSentinel verifies.
+      </p>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-sweep", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "power2.out" }, 0.1)
+        .fromTo("#s1-reticle", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.5)" }, 0.3)
+        .fromTo("#s1-tag", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, 0.4)
+        .fromTo("#s1-head", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.6)
+        .fromTo("#s1-sub", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 0.9)
+        .to("#root", { opacity: 0, scale: 0.96, duration: 0.4, ease: "power2.in" }, 2.8);
+      window.__timelines["scene1"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

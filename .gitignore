@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Environment
+.env
+.env.local
+*.pem
+secrets/
+
+# Data (large assets; keep structure via .gitkeep)
+data/raw/**/*
+!data/raw/.gitkeep
+data/processed/**/*
+!data/processed/.gitkeep
+data/explainability/**/*
+!data/explainability/.gitkeep
+data/alerts/**/*
+!data/alerts/.gitkeep
+data/.e2e_bootstrap_complete
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# GeoTIFF / rasters (curated samples may be added explicitly)
+*.tif
+*.tiff
+*.nc

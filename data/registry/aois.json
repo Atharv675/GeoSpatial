@@ -1,0 +1,41 @@
+{
+  "version": "1",
+  "aois": [
+    {
+      "aoi_id": "aoi-levant",
+      "name": "Levant Demo AOI",
+      "description": "Curated monitoring region — eastern Mediterranean demo",
+      "active": true,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [34.75, 31.2],
+            [34.85, 31.2],
+            [34.85, 31.3],
+            [34.75, 31.3],
+            [34.75, 31.2]
+          ]
+        ]
+      }
+    },
+    {
+      "aoi_id": "aoi-delta",
+      "name": "Delta Demo AOI",
+      "description": "Second curated region for multi-AOI workflows",
+      "active": true,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [31.1, 30.0],
+            [31.25, 30.0],
+            [31.25, 30.12],
+            [31.1, 30.12],
+            [31.1, 30.0]
+          ]
+        ]
+      }
+    }
+  ]
+}
